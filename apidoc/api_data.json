@@ -29,7 +29,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n   \"error\": false,\n   \"message\": \"Meetings Found\",\n   \"status\": 200,\n   \"data\": [\n           {\n       \"color\": {\n           \"primary\": string,\n           \"secondary\": string\n               },\n       \"meetingId\": string,\n       \"adminId\": string,\n       \"adminFullName\": string,\n       \"adminUserName\": string,\n       \"userId\": string,\n       \"userFullName\": string,\n       \"userEmail\": string,\n       \"start\": date,\n       \"end\": date,\n       \"place\": string,\n       \"title\": string\n           }\n       ]\n   }",
+          "content": "{\n   \"error\": false,\n   \"message\": \"Meetings Found\",\n   \"status\": 200,\n   \"data\": [\n           {\n       \"color\": {\n           \"primary\": string,\n           \"secondary\": string\n               },\n       \"meetingId\": string,\n       \"adminId\": string,\n       \"adminFullName\": string,\n       \"adminUserName\": string,\n       \"userId\": string,\n       \"userFullName\": string,\n       \"userEmail\": string,\n       \"start\": Date,\n       \"end\": Date,\n       \"place\": string,\n       \"title\": string\n           }\n       ]\n   }",
           "type": "object"
         }
       ]
@@ -70,7 +70,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n    \"error\": false,\n    \"message\": \"Users Found\",\n    \"status\": 200,\n    \"data\": {\n        \"userId\":string,\n        \"email\": string\n        \"firstName\": string,\n        \"lastName\": string,\n        \"userName\" : string,\n        \"countryCode\" : string,\n        \"mobileNumber\" : number,\n    }\n}",
+          "content": " {\n    \"error\": false,\n    \"message\": \"Users Found\",\n    \"status\": 200,\n    \"data\": {\n        \"userId\":string,\n        \"email\": string\n        \"firstName\": string,\n        \"lastName\": string,\n        \"userName\" : string,\n        \"countryCode\" : string,\n        \"mobileNumber\" : Number,\n    }\n}",
           "type": "object"
         }
       ]
@@ -118,7 +118,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n    \"error\": false,\n    \"message\": \"User Found\",\n    \"status\": 200,\n    \"data\": {\n        \"userId\": \"C3IQqPS5\",\n        \"lastName\": \"yadav\",\n        \"admin\": true,\n        \"createdOn\": \"2020-01-03T10:03:01.000Z\",\n        \"verified\": true,\n        \"firstName\": \"bhupendra\",\n        \"userName\": \"Bhupen@000-admin\",\n        \"email\": \"bhupendra875319@outlook.com\",\n        \"countryCode\": \"+91\",\n        \"mobileNumber\": \"7032161147\",\n        \"resetPwdLinkExpiry\": \"2020-01-03T10:29:57.834Z\",\n        \"resetPwdToken\": \"ebd4857e-3a58-4dea-af79-43acd51fade9\"\n    }\n}",
+          "content": " {\n    \"error\": false,\n    \"message\": \"User Found\",\n    \"status\": 200,\n    \"data\": {\n        \"lastName\": string,\n        \"admin\": Boolean,\n        \"createdOn\": Date,\n        \"verified\": Boolean,\n        \"userId\": string,\n        \"firstName\": string,\n        \"userName\": string,\n        \"email\": string,\n        \"countryCode\": string,\n        \"mobileNumber\": Number\n    }\n}",
           "type": "object"
         }
       ]
@@ -140,7 +140,7 @@
     "group": "User",
     "version": "1.0.0",
     "type": "post",
-    "url": "/api/v1/users/forgotPwd",
+    "url": "/api/v1/users/forgot",
     "title": "User Forgot Password.",
     "parameter": {
       "fields": {
@@ -159,7 +159,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n    \"error\": false,\n    \"message\": \"Token updated & reset link sent!\",\n    \"status\": 200,\n    \"data\": {\n        \"userId\": \"C3IQqPS5\",\n        \"lastName\": \"yadav\",\n        \"createdOn\": \"2020-01-03T10:03:01.000Z\",\n        \"verified\": true,\n        \"firstName\": \"bhupendra\",\n        \"userName\": \"Bhupen@000-admin\",\n        \"email\": \"bhupendra875319@outlook.com\",\n        \"countryCode\": \"+91\",\n        \"mobileNumber\": \"7032161147\",\n        \"resetPwdLinkExpiry\": \"2020-01-03T10:29:57.834Z\",\n        \"resetPwdToken\": \"ebd4857e-3a58-4dea-af79-43acd51fade9\"\n    }\n}",
+          "content": " {\n    \"error\": false,\n    \"message\": \"Reset Token Successful\",\n    \"status\": 200,\n    \"data\": {\n        \"userId\":string,\n        \"email\":string,\n        \"firstName\": string,\n        \"lastName\": string,\n        \"password\": string,\n        \"verified\" : Boolean,\n        \"createdOn\":Date,\n        \"resetPasswordExpires\":Date,\n        \"resetPasswordToken\" : string,\n        \"countryCode\" : string,\n        \"mobileNumber\" : Number\n    }\n}",
           "type": "object"
         }
       ]
@@ -175,13 +175,13 @@
     },
     "filename": "routes/user.js",
     "groupTitle": "User",
-    "name": "PostApiV1UsersForgotpwd"
+    "name": "PostApiV1UsersForgot"
   },
   {
     "group": "User",
     "version": "1.0.0",
     "type": "post",
-    "url": "/api/v1/users/resetPwd",
+    "url": "/api/v1/users/reset",
     "title": "User Reset Password.",
     "parameter": {
       "fields": {
@@ -223,7 +223,7 @@
     },
     "filename": "routes/user.js",
     "groupTitle": "User",
-    "name": "PostApiV1UsersResetpwd"
+    "name": "PostApiV1UsersReset"
   },
   {
     "group": "User",
@@ -346,7 +346,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n    \"error\": false,\n    \"message\": \"Signin successful\",\n    \"status\": 200,\n    \"data\": {\n        \"authToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RpZCI6InVhaGVoNUFSIiwiaWF0IjoxNTc4MDQ2MzA2NjkxLCJleHAiOjE1NzgxMzI3MDYsInN1YiI6ImF1dGhUb2tlbiIsImlzcyI6Im1lZXRpbmdQbGFubmVyIiwiZGF0YSI6eyJ1c2VySWQiOiJDM0lRcVBTNSIsImxhc3ROYW1lIjoieWFkYXYiLCJhZG1pbiI6dHJ1ZSwidmVyaWZpZWQiOnRydWUsImZpcnN0TmFtZSI6ImJodXBlbmRyYSIsInVzZXJOYW1lIjoiQmh1cGVuQDAwMC1hZG1pbiIsImVtYWlsIjoiYmh1cGVuZHJhODc1MzE5QG91dGxvb2suY29tIiwiY291bnRyeUNvZGUiOiIrOTEiLCJtb2JpbGVOdW1iZXIiOiI3MDMyMTYxMTQ3In19.y4Y1Jjuc8TnuxTIpC_o9uQIJDIqUGlhXYcfgtHuMWDM\",\n        \"userDetails\": {\n            \"userId\": \"C3IQqPS5\",\n            \"lastName\": \"yadav\",\n            \"admin\": true,\n            \"verified\": true,\n            \"firstName\": \"bhupendra\",\n            \"userName\": \"Bhupen@000-admin\",\n            \"email\": \"bhupendra875319@outlook.com\",\n            \"countryCode\": \"+91\",\n            \"mobileNumber\": \"7032161147\"\n        }\n    }\n}",
+          "content": " {\n    \"error\": false,\n    \"message\": \"signin Successful\",\n    \"status\": 200,\n    \"data\": {\n        \"authToken\":string,\n        \"userDetails\":{\n        \"userId\":string,\n        \"firstName\": string,\n        \"lastName\": string,                \n        \"email\":string,\n        \"mobileNumber\": string,\n        \"createdOn\":Date\n        }\n    }\n}",
           "type": "object"
         }
       ]
@@ -415,7 +415,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n    \"error\": false,\n    \"message\": \"User created\",\n    \"status\": 200,\n    \"data\": {\n        \"userId\": \"C3IQqPS5\",\n        \"lastName\": \"yadav\",\n        \"admin\": true,\n        \"createdOn\": \"2020-01-03T10:03:01.000Z\",\n        \"verified\": false,\n        \"_id\": \"5e0f1155a850640168de45b0\",\n        \"firstName\": \"bhupendra\",\n        \"userName\": \"Bhupen@000-admin\",\n        \"email\": \"bhupendra875319@outlook.com\",\n        \"countryCode\": \"+91\",\n        \"mobileNumber\": \"7032161147\",\n        \"verifyUserToken\": \"be88b551-8145-4559-8993-1e3f18a2662f\",\n        \"__v\": 0\n    }\n}",
+          "content": " {\n    \"error\": false,\n    \"message\": \"User Created\",\n    \"status\": 200,\n    \"data\": {               \n        \"userId\":string,\n        \"firstName\": string,\n        \"lastName\": string,                \n        \"email\":string,\n        \"mobileNumber\": string,\n        \"password\": string,\n        \"createdOn\":Date\n    }\n}",
           "type": "object"
         }
       ]
